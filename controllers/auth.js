@@ -1,5 +1,5 @@
 const prisma = require('../config/prisma')
-const logger = require('../config/logger')
+//const logger = require('../config/logger')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
@@ -33,7 +33,7 @@ exports.register = async (req, res) => {
         }
         // Step 3 HashPassword
         const hashPassword = await bcrypt.hash(password, 10)
-        console.log("testrole")
+       // console.log("testrole")
 
 
         // Step 4 Register
