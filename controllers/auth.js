@@ -67,9 +67,9 @@ exports.login = async (req, res) => {
     try {
         //code
 
-        logger.info('INFO message');
-        logger.debug('DEBUG message');
-        logger.error('ERROR message');
+        //logger.info('INFO message');
+        //logger.debug('DEBUG message');
+        //logger.error('ERROR message');
         const { email, password } = req.body
         // Step 1 Check Email
         const user = await prisma.user.findFirst({
