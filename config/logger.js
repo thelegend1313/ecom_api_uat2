@@ -10,7 +10,7 @@ const transports = [];
 transports.push(new winston.transports.Console());
 // 4
 if ( !fs.existsSync(logDir) ) {
-  fs.mkdirSync(logDir);
+  //fs.mkdirSync(logDir);
 }
 const logFile = path.join(logDir, logName);
 transports.push(new winston.transports.File({ filename: logFile }));
