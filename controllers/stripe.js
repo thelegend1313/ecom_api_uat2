@@ -6,7 +6,7 @@ exports.payment = async (req, res) => {
 
     // /check user
    // req.user.id
-    //console.log("user:id", req.user.id);
+    console.log("user:id", req.user.id);
     const cart = await prisma.cart.findFirst({
       where: {
         orderedById: req.user.id
