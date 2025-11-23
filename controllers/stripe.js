@@ -1,4 +1,6 @@
 const prisma = require("../config/prisma")
+const stripe = require('stripe')('sk_')
+ // ('test_51RmbDUPDC7tuqqBCz0HLgeNjDHbm1Bw5Hz6Hm95ISYSHZqmArboBqaNs3X0Z8c8cEfCANvB7EllFEozKNt4oRywD00QNHvTeaY');
 
 exports.payment = async (req, res) => {
   try {
@@ -13,10 +15,9 @@ exports.payment = async (req, res) => {
       }
     })
     const amountTHB = cart.cartTotal*100; // Convert to THB cents
-    //console.log("amountTHB:", amountTHB);
+    console.log("amountTHB:", amountTHB);
 
-    const stripe = require('stripe')('');
-
+ 
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amountTHB,
       currency: 'thb',
@@ -24,6 +25,7 @@ exports.payment = async (req, res) => {
         enabled: true,
       },
     });
+    console.log("client_secret:", paymentIntent.client_secret)
     res.send({
       clientSecret: paymentIntent.client_secret,
     });
