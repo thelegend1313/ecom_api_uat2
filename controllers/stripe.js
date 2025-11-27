@@ -1,5 +1,5 @@
 const prisma = require("../config/prisma")
-const stripe = require('stripe')(import.meta.env.VITE_STRIPE_SK);
+const stripe = require('stripe')(env("VITE_STRIPE_SK"));
 
 exports.payment = async (req, res) => {
   try {
