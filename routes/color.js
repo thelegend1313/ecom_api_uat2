@@ -9,7 +9,7 @@ const uploadOpts={
 const { create, list, remove,importt } = require('../controllers/color')
 const { authCheck, adminCheck } = require('../middlewares/authCheck')
 
-// @ENDPOINT http://localhost:5001/api/color
+// @ENDPOINT https://ecom-api-uat2.vercel.app/api/color
 //router.post('/color', authCheck, adminCheck, create)
 router.post('/color/import-excel',fileUpload(uploadOpts),importt)//*
 router.post('/color', authCheck, create)

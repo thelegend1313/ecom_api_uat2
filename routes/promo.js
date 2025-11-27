@@ -12,7 +12,7 @@ const uploadOpts={
 const { create, list, remove ,importt} = require('../controllers/promo')
 const { authCheck, adminCheck } = require('../middlewares/authCheck')
 
-// @ENDPOINT http://localhost:5001/api/color
+// @ENDPOINT https://ecom-api-uat2.vercel.app/api/color
 //router.post('/color', authCheck, adminCheck, create)
 router.post('/promo', authCheck, create)
 router.get('/promo', list)

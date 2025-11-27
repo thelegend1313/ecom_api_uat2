@@ -8,7 +8,7 @@ const uploadOpts={
 const { create, list, remove,importt } = require('../controllers/category')
 const { authCheck, adminCheck } = require('../middlewares/authCheck')
 router.post('/category/import-excel',fileUpload(uploadOpts),importt)//*
-// @ENDPOINT http://localhost:5001/api/category
+// @ENDPOINT https://ecom-api-uat2.vercel.app/api/category
 //router.post('/category', authCheck, adminCheck, create)
 router.post('/category', authCheck, create)
 router.get('/category', list)

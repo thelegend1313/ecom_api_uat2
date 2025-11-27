@@ -11,7 +11,7 @@ const { create, list, remove,importt} = require('../controllers/role')//*
 const {authCheck, adminCheck  } = require('../middlewares/authCheck')
 
 
-// @ENDPOINT http://localhost:5001/api/category
+// @ENDPOINT https://ecom-api-uat2.vercel.app/api/category
 //router.post('/category', authCheck, adminCheck, create)
 router.post('/role', authCheck, create)
 router.get('/role', list)
